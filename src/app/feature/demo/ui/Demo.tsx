@@ -2,7 +2,7 @@ import { useToggle } from '@/app/hooks/useToggle'
 
 export const Demo = () => {
   const [value, toggle] = useToggle(['blue', 'orange', 'cyan', 'teal'])
-
+// const [value, toggle] = useToggle()
   return (
     <>
       <h2>\Кликать сюда/</h2>

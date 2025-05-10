@@ -32,8 +32,15 @@ const reducer = (state: ToggleState, action: ToggleAction): ToggleState => {
   }
 }
 
-export const useToggle = (values: any[]) => {
-  const [state, dispatch] = useReducer(reducer, { list: values, index: 0 })
+export const useToggle = (values?: any[]) => {
+  const [state, dispatch] = useReducer(reducer, {
+    list: values ?? [true, false],
+    index: 0,
+  })
+
+  useEffect(() => {
+    console.log(state)
+  }, [state])
 
   const toggle = (element?: any) => {
     if (element) {
