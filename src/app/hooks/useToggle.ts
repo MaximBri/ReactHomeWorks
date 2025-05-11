@@ -21,10 +21,7 @@ const reducer = (state: ToggleState, action: ToggleAction): ToggleState => {
     }
     case 'add': {
       const newList = [...state.list, action.element]
-      const newIndex =
-        state.index === state.list.length - 1
-          ? newList.length - 1
-          : state.index + 1
+      const newIndex = newList.length - 1
       return { list: newList, index: newIndex }
     }
     default:
@@ -32,7 +29,7 @@ const reducer = (state: ToggleState, action: ToggleAction): ToggleState => {
   }
 }
 
-export const useToggle = (values?: any[]) => {
+export const useToggle = <T = boolean>(values?: T[]) => {
   const [state, dispatch] = useReducer(reducer, {
     list: values ?? [true, false],
     index: 0,
