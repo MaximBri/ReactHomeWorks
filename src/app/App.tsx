@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Demo } from '../features/demo'
+import { Demo } from './feature/demo'
 import './styles/App.css'
 
 function App() {
