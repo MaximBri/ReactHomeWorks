@@ -1,21 +1,21 @@
-import { useState } from 'react'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 
-import { Demo } from '../features/demo'
+import { routes } from '@/shared/configs/routes'
+import { HomePage } from '@/pages/home'
+import { AuthPage } from '@/pages/auth'
+import { RegisterPage } from '@/pages/register'
+import './styles/reset.scss'
 import './styles/App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-      <Demo />
-    </>
+    <HashRouter>
+      <Routes>
+        <Route index path={routes.base} element={<HomePage />} />
+        <Route path={routes.pages.auth} element={<AuthPage />} />
+        <Route path={routes.pages.register} element={<RegisterPage />} />
+      </Routes>
+    </HashRouter>
   )
 }
 
