@@ -30,6 +30,7 @@ const defaultInputsData: SignupInputsModel = {
 
 export const signUpModel = () => {
   const formRef = useRef<HTMLFormElement>(null)
+  
   const [error, setError] = useState<ErrorModel>(defaultError)
   const [inputsData, setInputsData] =
     useState<SignupInputsModel>(defaultInputsData)
@@ -84,10 +85,6 @@ export const signUpModel = () => {
       formRef.current?.reset()
     }
   }
-
-  useEffect(() => {
-    console.log(inputsData)
-  }, [inputsData])
 
   return {
     formRef,

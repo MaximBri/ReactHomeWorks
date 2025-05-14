@@ -22,6 +22,7 @@ const defaultInputsData = {
 
 export const signInModel = () => {
   const formRef = useRef<HTMLFormElement>(null)
+  
   const [error, setError] = useState<ErrorModel>(defaultError)
   const [inputsData, setInputsData] =
     useState<SigninInputsModel>(defaultInputsData)
